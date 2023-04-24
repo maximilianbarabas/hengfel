@@ -1,0 +1,41 @@
+<!-- 
+* File: main.component.html
+* Author: Maximilian Barabas
+* Copyright: M B
+* Group: Szoft_II_N
+* Date: 2022-04-18
+* Github: https://github.com/maximilianbarabas
+* Licenc: GNU GPL 
+-->
+
+
+<div class="form p-3">
+  <h2>cylinder data</h2>
+  <div class="mt-3">
+    <input type="text" placeholder="Radius (cm)" [formControl]="radius" class="form-control">
+  </div>
+  <div class="mt-3">
+    <input type="text" placeholder="Length (cm)" [formControl]="height" class="form-control" (keyup)="onKeyUp($event)">
+  </div>
+
+  <div class="mt-3 justify-content-center row">
+    <div class="col-6">
+      <input type="submit" name="" id="" class="btn btn-primary w-100" (click)="eventHandler()">
+    </div>
+
+    <div class="col-6">
+      <input *ngIf="resetVisible" type="reset" class="btn btn-secondary w-100" (click)="reset()">
+    </div>
+  </div>
+
+  <!-- results -->
+
+  <div class="mt-3" *ngIf="resultVisible">
+    <h3>Result</h3>
+    <div class="mt-3">
+
+      <div class="mt-3">
+        <input type="text" readonly placeholder="Surface area (cm^2)" [formControl]="surface" class="form-control">
+      </div>
+    </div>
+  </div>
